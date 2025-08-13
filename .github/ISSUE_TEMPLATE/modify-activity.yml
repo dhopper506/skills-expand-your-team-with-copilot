@@ -1,0 +1,148 @@
+name: ✏️ Modify Existing Activity
+description: Request changes to an existing extracurricular activity
+title: "Modify Activity: [Activity Name]"
+labels: ["enhancement", "activity-modification", "teacher-request"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to request changes to an existing activity in the system.
+        
+  - type: dropdown
+    id: activity-name
+    attributes:
+      label: Which Activity Needs Changes?
+      description: Select the activity you want to modify
+      options:
+        - Art Club
+        - Drama Club  
+        - Math Club
+        - Computer Programming Club
+        - Morning Fitness
+        - Soccer Team
+        - Debate Team
+        - Weekend Robotics Workshop
+        - Science Olympiad
+        - Sunday Chess Tournament
+        - Other (specify in description)
+    validations:
+      required: true
+
+  - type: input
+    id: other-activity
+    attributes:
+      label: Other Activity Name
+      description: If you selected "Other" above, specify the activity name
+      placeholder: "Enter the exact activity name as shown on the website"
+
+  - type: checkboxes
+    id: changes-needed
+    attributes:
+      label: What Changes Are Needed?
+      description: Check all that apply
+      options:
+        - label: Change description/details
+        - label: Change meeting schedule (days/times)
+        - label: Change maximum participant capacity
+        - label: Change teacher sponsor
+        - label: Add/remove current participants
+        - label: Other (describe below)
+
+  - type: textarea
+    id: current-issue
+    attributes:
+      label: Current Problem/Issue
+      description: Describe what's currently wrong or what needs to be updated
+      placeholder: "e.g., The schedule shows wrong time, capacity is too small, description is outdated"
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired-changes
+    attributes:
+      label: Desired Changes
+      description: Specify exactly what you want changed
+      placeholder: "e.g., Change meeting time from 3:30 PM to 4:00 PM, increase capacity from 15 to 20 students"
+    validations:
+      required: true
+
+  - type: input
+    id: new-schedule
+    attributes:
+      label: New Schedule (if applicable)
+      description: If changing schedule, provide new meeting days and times
+      placeholder: "e.g., Mondays and Wednesdays, 3:30 PM - 5:00 PM"
+
+  - type: input
+    id: new-capacity
+    attributes:
+      label: New Maximum Capacity (if applicable)
+      description: If changing capacity, specify new maximum number of participants
+      placeholder: "e.g., 25"
+
+  - type: textarea
+    id: new-description
+    attributes:
+      label: New Description (if applicable)
+      description: If changing description, provide the updated text
+      placeholder: "Enter the complete new description for the activity"
+
+  - type: input
+    id: new-sponsor
+    attributes:
+      label: New Teacher Sponsor (if applicable)
+      description: If changing sponsor, provide the teacher's username
+      placeholder: "e.g., mrodriguez, mchen"
+
+  - type: textarea
+    id: student-changes
+    attributes:
+      label: Student Registration Changes (if applicable)
+      description: List any students to add or remove from this activity
+      placeholder: "Add: student1@mergington.edu, student2@mergington.edu\nRemove: student3@mergington.edu"
+
+  - type: input
+    id: urgency
+    attributes:
+      label: Urgency Level
+      description: How urgent is this change?
+      placeholder: "Low/Medium/High/Critical"
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason for Change
+      description: Why is this change needed?
+      placeholder: "e.g., Room availability changed, new teacher assigned, student interest increased"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Check all that apply for this request to be considered complete
+      options:
+        - label: Changes are visible on the main activities page
+        - label: Activity information displays correctly
+        - label: Teachers can still register/unregister students
+        - label: Schedule information is accurate
+        - label: Capacity limits work properly
+        - label: No existing functionality is broken
+
+  - type: markdown
+    attributes:
+      value: |
+        ## For Development Team
+        
+        **Technical Implementation Notes:**
+        - Modify the appropriate activity entry in `src/backend/database.py`
+        - Ensure schedule_details format is maintained (24-hour time format)
+        - If changing participant list, update the participants array
+        - Test all activity functionality after changes
+        - Verify schedule filtering and search still work correctly
+        
+        **Files to modify:**
+        - `src/backend/database.py` - Update activity data
+        - Test frontend functionality to ensure no breaking changes
