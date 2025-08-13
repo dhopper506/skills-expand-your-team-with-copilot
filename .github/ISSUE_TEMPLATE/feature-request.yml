@@ -1,0 +1,178 @@
+name: ✨ Feature Request
+description: Request a new feature or enhancement for the activities system
+title: "Feature Request: [Brief Description]"
+labels: ["enhancement", "feature-request", "teacher-request"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a new feature! Please describe your idea in detail so we can understand how to best implement it.
+        
+  - type: dropdown
+    id: feature-category
+    attributes:
+      label: What type of feature is this?
+      description: Choose the category that best fits your request
+      options:
+        - Student management (registration, tracking, etc.)
+        - Activity management (scheduling, capacity, etc.)
+        - User interface improvements
+        - Reporting and data export
+        - Communication features
+        - Mobile/accessibility improvements
+        - Administrative tools
+        - Integration with other systems
+        - Security and permissions
+        - Other (describe below)
+    validations:
+      required: true
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Feature Description
+      description: Describe the feature you'd like to see added
+      placeholder: "Clearly explain what you want the system to be able to do"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem-solving
+    attributes:
+      label: What Problem Does This Solve?
+      description: Explain why this feature is needed
+      placeholder: "Describe the current challenge or limitation this feature would address"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-workaround
+    attributes:
+      label: Current Workaround
+      description: How do you currently handle this task (if at all)?
+      placeholder: "Describe what you do now to accomplish this task, or why you can't do it at all"
+
+  - type: textarea
+    id: user-story
+    attributes:
+      label: User Story
+      description: Describe how you would use this feature
+      placeholder: "As a teacher, I want to... so that I can..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: user-type
+    attributes:
+      label: Who Would Use This Feature?
+      description: Who would benefit from this feature?
+      options:
+        - Teachers only
+        - Students only
+        - Both teachers and students
+        - Administrators only
+        - All users
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority Level
+      description: How important is this feature to your daily work?
+      options:
+        - Critical - Essential for daily operations
+        - High - Would significantly improve efficiency
+        - Medium - Nice to have, would be helpful
+        - Low - Minor improvement
+    validations:
+      required: true
+
+  - type: textarea
+    id: detailed-requirements
+    attributes:
+      label: Detailed Requirements
+      description: List specific requirements for this feature
+      placeholder: |
+        • The feature should...
+        • Users must be able to...
+        • The system should prevent...
+        • Data should be...
+
+  - type: textarea
+    id: ui-mockup
+    attributes:
+      label: User Interface Ideas
+      description: Describe how you imagine this would look or work in the interface
+      placeholder: "e.g., A new button on the main page, a new tab in the activity details, a popup form, etc."
+
+  - type: checkboxes
+    id: related-features
+    attributes:
+      label: Related Existing Features
+      description: Which current features would this interact with?
+      options:
+        - label: Student registration system
+        - label: Activity viewing and filtering
+        - label: Teacher authentication
+        - label: Activity scheduling
+        - label: Capacity management
+        - label: User interface/design
+        - label: None - this is completely separate
+
+  - type: textarea
+    id: success-criteria
+    attributes:
+      label: Success Criteria
+      description: How will we know this feature is working correctly?
+      placeholder: "This feature will be successful when..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Check all that must be true for this feature to be considered complete
+      options:
+        - label: Feature works as described in all scenarios
+        - label: Feature is intuitive and easy to use
+        - label: Feature doesn't break existing functionality
+        - label: Feature works on different devices/browsers
+        - label: Feature handles errors gracefully
+        - label: Feature is documented (if needed)
+
+  - type: textarea
+    id: additional-notes
+    attributes:
+      label: Additional Notes
+      description: Any other details, constraints, or considerations?
+      placeholder: "e.g., This should integrate with..., This must comply with..., Consider future expansion..."
+
+  - type: markdown
+    attributes:
+      value: |
+        ## For Development Team
+        
+        **Implementation Planning:**
+        - [ ] Analyze technical feasibility
+        - [ ] Identify required changes to backend API
+        - [ ] Determine frontend UI/UX changes needed
+        - [ ] Consider database schema modifications
+        - [ ] Evaluate impact on existing features
+        - [ ] Estimate development effort
+        - [ ] Plan testing approach
+        
+        **Potential Files to Modify:**
+        - Backend routes: `src/backend/routers/`
+        - Database schema: `src/backend/database.py`
+        - Frontend interface: `src/static/index.html`, `src/static/app.js`
+        - Styling: `src/static/styles.css`
+        
+        **Consider:**
+        - User permissions and security
+        - Data validation and error handling
+        - Mobile responsiveness
+        - Performance impact
+        - Future extensibility

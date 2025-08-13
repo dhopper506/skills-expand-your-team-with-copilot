@@ -1,0 +1,166 @@
+name: 🐛 Bug Report
+description: Report a problem with the activities management system
+title: "Bug: [Brief Description]"
+labels: ["bug", "teacher-report"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a bug! Please provide as much detail as possible to help us fix it quickly.
+        
+  - type: dropdown
+    id: bug-area
+    attributes:
+      label: What area is affected?
+      description: Where did you encounter the problem?
+      options:
+        - Login/Authentication
+        - Viewing activities list
+        - Student registration
+        - Student removal/unregistration
+        - Activity filtering/search
+        - Teacher dashboard
+        - Activity details display
+        - Mobile/tablet view
+        - Other (describe below)
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What Happened?
+      description: Describe what went wrong
+      placeholder: "Tell us what you saw that wasn't working correctly"
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: What Should Have Happened?
+      description: Describe what you expected to see
+      placeholder: "Tell us what you expected to happen instead"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: How can we recreate this problem?
+      placeholder: |
+        1. Go to...
+        2. Click on...
+        3. Type...
+        4. See error...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How Often Does This Happen?
+      description: How frequently do you encounter this issue?
+      options:
+        - Always (every time)
+        - Often (most of the time)
+        - Sometimes (occasionally)
+        - Rarely (once or twice)
+        - First time seeing this
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Which Browser Are You Using?
+      description: What browser did you use when you saw the bug?
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Other (specify below)
+
+  - type: input
+    id: other-browser
+    attributes:
+      label: Other Browser
+      description: If you selected "Other" above, specify which browser
+      placeholder: "e.g., Opera, Brave"
+
+  - type: dropdown
+    id: device-type
+    attributes:
+      label: What Device Are You Using?
+      options:
+        - Desktop/Laptop Computer
+        - Tablet (iPad, Android tablet)
+        - Mobile Phone
+        - Chromebook
+
+  - type: input
+    id: teacher-username
+    attributes:
+      label: Your Teacher Username
+      description: What username were you logged in with? (helps with troubleshooting)
+      placeholder: "e.g., mrodriguez, mchen"
+
+  - type: textarea
+    id: error-messages
+    attributes:
+      label: Error Messages
+      description: Did you see any error messages? Copy them here exactly as shown
+      placeholder: "Copy and paste any error messages you saw"
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Information
+      description: Anything else that might be helpful?
+      placeholder: "e.g., This started happening after..., It only happens when..., Screenshot description"
+
+  - type: checkboxes
+    id: impact
+    attributes:
+      label: Impact Level
+      description: How is this affecting your work?
+      options:
+        - label: Blocking - Cannot complete essential tasks
+        - label: High - Major inconvenience, but workarounds exist
+        - label: Medium - Annoying but doesn't prevent core tasks
+        - label: Low - Minor issue, doesn't significantly impact work
+
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria (for fixing this bug)
+      description: This bug will be considered fixed when
+      options:
+        - label: The described steps no longer produce the error
+        - label: Expected behavior occurs instead of the bug
+        - label: No new bugs are introduced by the fix
+        - label: Similar scenarios work correctly
+        - label: The fix works across different browsers/devices
+
+  - type: markdown
+    attributes:
+      value: |
+        ## For Development Team
+        
+        **Bug Investigation Checklist:**
+        - [ ] Reproduce the bug using the provided steps
+        - [ ] Check browser console for JavaScript errors
+        - [ ] Verify API endpoints are working correctly
+        - [ ] Test with different user accounts and permissions
+        - [ ] Check database data consistency
+        - [ ] Test across different browsers if UI-related
+        
+        **Potential Areas to Check:**
+        - Frontend JavaScript (`src/static/app.js`)
+        - Backend API routes (`src/backend/routers/`)
+        - Database queries and data (`src/backend/database.py`)
+        - Authentication logic (`src/backend/routers/auth.py`)
+        - HTML/CSS layout issues (`src/static/index.html`, `src/static/styles.css`)

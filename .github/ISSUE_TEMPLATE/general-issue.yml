@@ -1,0 +1,104 @@
+name: 📋 General Issue
+description: For any other issues not covered by the specific templates
+title: "[Brief Description]"
+labels: ["teacher-request"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        If your issue doesn't fit into any of the specific categories (Add Activity, Modify Activity, Bug Report, Feature Request, UI/UX, or Student Management), please use this general form.
+        
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Issue Description
+      description: Describe what you need help with
+      placeholder: "Clearly explain what you're trying to accomplish or what problem you're facing"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-situation
+    attributes:
+      label: Current Situation
+      description: What's happening now?
+      placeholder: "Describe the current state or what you're experiencing"
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired-outcome
+    attributes:
+      label: Desired Outcome
+      description: What would you like to happen instead?
+      placeholder: "Describe what you want to achieve or how you want things to work"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue-category
+    attributes:
+      label: Best Category
+      description: Which category does this most closely relate to?
+      options:
+        - Activity management
+        - Student registration
+        - User interface
+        - Technical support
+        - Training/documentation
+        - System administration
+        - Data/reporting
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Priority Level
+      description: How important is this to your daily work?
+      options:
+        - Critical - Blocking essential work
+        - High - Significantly impacting efficiency
+        - Medium - Causing inconvenience
+        - Low - Minor issue or nice-to-have
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information
+      placeholder: "Provide any additional details, constraints, or context that might be helpful"
+
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: Success Criteria
+      description: How will we know this issue is resolved?
+      options:
+        - label: The described problem is solved
+        - label: The desired outcome is achieved
+        - label: No new issues are created by the solution
+        - label: The solution works for similar scenarios
+        - label: Documentation is updated if needed
+
+  - type: markdown
+    attributes:
+      value: |
+        ## For Development Team
+        
+        **General Issue Handling:**
+        - [ ] Categorize the issue more specifically if possible
+        - [ ] Determine if this should be split into multiple specific issues
+        - [ ] Identify which parts of the system are involved
+        - [ ] Clarify requirements with the reporter if needed
+        - [ ] Consider creating a specific template for this type of issue if it's common
+        
+        **Investigation Areas:**
+        - Review all relevant code areas based on issue description
+        - Consider impact on existing functionality
+        - Evaluate technical feasibility and effort required
+        - Plan appropriate testing approach

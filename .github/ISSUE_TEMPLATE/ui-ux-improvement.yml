@@ -1,0 +1,195 @@
+name: 🎨 UI/UX Improvement
+description: Request improvements to the user interface or user experience
+title: "UI/UX: [Brief Description]"
+labels: ["enhancement", "ui-ux", "design", "teacher-request"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help us improve the user interface and experience! Describe what could be better or easier to use.
+        
+  - type: dropdown
+    id: ui-area
+    attributes:
+      label: Which part of the interface needs improvement?
+      description: Select the area you want to improve
+      options:
+        - Main activities page
+        - Activity details/cards
+        - Login screen
+        - Student registration forms
+        - Activity filtering/search
+        - Teacher controls
+        - Mobile/tablet view
+        - Overall layout/navigation
+        - Color scheme/visual design
+        - Error messages/feedback
+        - Loading states
+        - Other (describe below)
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-problem
+    attributes:
+      label: Current Problem
+      description: What makes the current interface difficult or confusing?
+      placeholder: "Describe what's hard to use, find, or understand in the current design"
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested-improvement
+    attributes:
+      label: Suggested Improvement
+      description: How would you like it to work or look instead?
+      placeholder: "Describe your ideal solution or how you think it should work"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: device-context
+    attributes:
+      label: What device do you primarily use?
+      description: This helps us prioritize device-specific improvements
+      options:
+        - Desktop computer
+        - Laptop
+        - Tablet (iPad, Android)
+        - Mobile phone
+        - Mix of devices
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: usability-issues
+    attributes:
+      label: What usability issues do you experience?
+      description: Check all that apply
+      options:
+        - label: Hard to find what I'm looking for
+        - label: Too many clicks to complete tasks
+        - label: Text is too small or hard to read
+        - label: Buttons/links are unclear
+        - label: Layout is cluttered or confusing
+        - label: Colors are hard to distinguish
+        - label: Works poorly on mobile/tablet
+        - label: Takes too long to load
+        - label: Error messages are confusing
+        - label: Can't tell what's clickable
+        - label: Information is hard to scan/read
+        - label: Other (describe in suggestions)
+
+  - type: dropdown
+    id: task-context
+    attributes:
+      label: When does this problem occur?
+      description: In what situation do you encounter this issue?
+      options:
+        - During daily routine tasks
+        - When registering students for activities
+        - When looking up activity information
+        - When trying to find specific activities
+        - When using on mobile/tablet
+        - When helping students navigate
+        - During busy periods with many students
+        - Other (describe below)
+
+  - type: textarea
+    id: impact-description
+    attributes:
+      label: How does this impact your work?
+      description: Explain how this UI issue affects your daily tasks
+      placeholder: "e.g., Makes student registration take twice as long, Students get confused and ask for help, Hard to use during busy periods"
+    validations:
+      required: true
+
+  - type: input
+    id: frequency
+    attributes:
+      label: How often do you encounter this issue?
+      description: Daily, weekly, occasionally, etc.
+      placeholder: "e.g., Multiple times daily, Every time I register students"
+    validations:
+      required: true
+
+  - type: textarea
+    id: specific-examples
+    attributes:
+      label: Specific Examples
+      description: Give concrete examples of when this problem occurs
+      placeholder: "e.g., When I try to register 5 students quickly, I have to click through too many screens. When students ask about chess club, I can't find it easily."
+
+  - type: textarea
+    id: design-inspiration
+    attributes:
+      label: Design Inspiration (Optional)
+      description: Have you seen this done well elsewhere? Describe or provide examples
+      placeholder: "e.g., Other school websites, apps you like, specific features that work well"
+
+  - type: checkboxes
+    id: accessibility-needs
+    attributes:
+      label: Accessibility Considerations
+      description: Do any of these accessibility improvements apply?
+      options:
+        - label: Need larger text/font sizes
+        - label: Need better color contrast
+        - label: Need clearer visual indicators
+        - label: Need keyboard navigation support
+        - label: Need screen reader compatibility
+        - label: Need simpler language/labels
+        - label: Need reduced visual complexity
+        - label: Not applicable
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority Level
+      description: How much would this improvement help your daily work?
+      options:
+        - High - Would significantly improve daily efficiency
+        - Medium - Would be helpful and reduce frustration
+        - Low - Minor improvement, nice to have
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: This improvement will be successful when
+      options:
+        - label: The interface is more intuitive and easier to use
+        - label: Tasks can be completed more quickly
+        - label: Users don't get confused or need help
+        - label: The design works well on all devices
+        - label: Visual design is clear and professional
+        - label: Accessibility is improved (if applicable)
+
+  - type: markdown
+    attributes:
+      value: |
+        ## For Development Team
+        
+        **UI/UX Implementation Notes:**
+        - [ ] Review current interface design patterns
+        - [ ] Consider mobile-first responsive design
+        - [ ] Evaluate accessibility standards (WCAG guidelines)
+        - [ ] Test with different screen sizes and devices
+        - [ ] Consider user workflow optimization
+        - [ ] Maintain consistency with existing design
+        
+        **Files Likely to Modify:**
+        - `src/static/styles.css` - Visual styling and layout
+        - `src/static/index.html` - HTML structure and elements
+        - `src/static/app.js` - Interactive behavior and UI state
+        
+        **Design Considerations:**
+        - Responsive design for mobile/tablet
+        - Color accessibility and contrast ratios
+        - Touch-friendly interface elements
+        - Clear visual hierarchy
+        - Consistent design patterns
+        - Loading states and user feedback

@@ -1,0 +1,171 @@
+name: 👥 Student Management Issue
+description: Issues with student registration, removal, or management
+title: "Student Management: [Brief Description]"
+labels: ["student-management", "teacher-request"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for issues related to managing student registrations and participation in activities.
+        
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: What type of student management issue is this?
+      description: Select the issue category
+      options:
+        - Cannot register student for activity
+        - Cannot remove student from activity
+        - Student appears in wrong activity
+        - Student registration limit issues
+        - Student email/information problems
+        - Duplicate student registrations
+        - Activity capacity issues
+        - Permission/access problems
+        - Other (describe below)
+    validations:
+      required: true
+
+  - type: input
+    id: activity-name
+    attributes:
+      label: Activity Name
+      description: Which activity is this related to?
+      placeholder: "e.g., Drama Club, Math Club, Soccer Team"
+    validations:
+      required: true
+
+  - type: textarea
+    id: student-emails
+    attributes:
+      label: Student Email(s) Involved
+      description: List the student email addresses related to this issue
+      placeholder: "student1@mergington.edu, student2@mergington.edu"
+    validations:
+      required: true
+
+  - type: textarea
+    id: detailed-problem
+    attributes:
+      label: Detailed Problem Description
+      description: Explain exactly what's happening with the student management
+      placeholder: "Describe step-by-step what you tried to do and what went wrong"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-taken
+    attributes:
+      label: Steps You've Already Tried
+      description: What have you attempted to fix this issue?
+      placeholder: "e.g., Tried logging out and back in, tried different browser, checked student email spelling"
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Urgency Level
+      description: How urgent is this issue?
+      options:
+        - Critical - Activity starts soon, needs immediate fix
+        - High - Affecting multiple students or daily operations
+        - Medium - Inconvenient but not blocking critical tasks
+        - Low - Can wait, minor issue
+    validations:
+      required: true
+
+  - type: input
+    id: teacher-username
+    attributes:
+      label: Your Teacher Username
+      description: Your login username (helps with troubleshooting permissions)
+      placeholder: "e.g., mrodriguez, mchen"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: error-symptoms
+    attributes:
+      label: What symptoms are you seeing?
+      description: Check all that apply
+      options:
+        - label: Error message appears when trying to register student
+        - label: Student name doesn't appear in participant list after registration
+        - label: Cannot click the register/unregister button
+        - label: Activity shows as full when it shouldn't be
+        - label: Student appears registered for activity they're not in
+        - label: Duplicate entries for the same student
+        - label: Student email shows as invalid
+        - label: Registration seems to work but student isn't actually registered
+        - label: Other (describe in problem description)
+
+  - type: textarea
+    id: error-messages
+    attributes:
+      label: Exact Error Messages
+      description: Copy any error messages you see exactly as they appear
+      placeholder: "Copy and paste any error text, or describe exactly what you see"
+
+  - type: input
+    id: current-capacity
+    attributes:
+      label: Current Activity Capacity Info
+      description: How many students are currently enrolled vs. maximum?
+      placeholder: "e.g., 15 out of 20 students enrolled"
+
+  - type: textarea
+    id: desired-outcome
+    attributes:
+      label: Desired Outcome
+      description: What exactly do you want to happen?
+      placeholder: "e.g., John Smith should be registered for Drama Club, Sarah should be removed from Math Club"
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information?
+      placeholder: "e.g., This started happening after..., Only affects certain students, Related to schedule changes"
+
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: This issue will be resolved when
+      options:
+        - label: Students can be successfully registered for activities
+        - label: Students can be successfully removed from activities
+        - label: Activity participant lists show accurate information
+        - label: Capacity limits work correctly
+        - label: No error messages appear during normal operations
+        - label: Teachers have appropriate permissions for student management
+
+  - type: markdown
+    attributes:
+      value: |
+        ## For Development Team
+        
+        **Student Management Troubleshooting:**
+        - [ ] Check teacher authentication and permissions
+        - [ ] Verify student email format and validation
+        - [ ] Check activity capacity calculations
+        - [ ] Review participant list management logic
+        - [ ] Test registration/unregistration API endpoints
+        - [ ] Verify database data consistency
+        - [ ] Check for duplicate or orphaned records
+        
+        **Potential Issues to Investigate:**
+        - Authentication problems (`src/backend/routers/auth.py`)
+        - Registration logic (`src/backend/routers/activities.py`)
+        - Database operations (`src/backend/database.py`)
+        - Frontend form handling (`src/static/app.js`)
+        - Email validation and formatting
+        - Capacity limit calculations
+        
+        **Testing Checklist:**
+        - [ ] Test with different teacher accounts
+        - [ ] Verify API endpoints with tools like curl or Postman
+        - [ ] Check browser console for JavaScript errors
+        - [ ] Validate database state matches UI display
